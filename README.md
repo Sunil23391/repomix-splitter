@@ -1,6 +1,17 @@
 # Repomix-Splitter
 
-A tool for splitting and managing repository content with ease.
+Repomix-Splitter is designed for users working with Large Language Models (LLMs) that have limited context windows.
+This package enables you to minify and split a large input into multiple segments, each packaged with instructions for the LLM not to analyze the content immediately. Instead, the LLM is prompted to wait until the final segment is received before beginning its analysis.
+
+**Key Features:**
+- Breaks down large inputs to fit within LLM context limitations
+- Each split contains information instructing the LLM to hold off analysis
+- Once the last split is provided, the LLM is directed to process the combined input
+
+**How It Works:**
+1. Your input is split into manageable chunks.
+2. Each chunk is sent to the LLM with instructions to “wait for the final message.”
+3. After all splits are provided, the final instruction tells the LLM to begin analysis.
 
 ## Table of Contents
 - [Installation](#installation)
